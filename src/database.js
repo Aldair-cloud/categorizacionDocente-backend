@@ -1,6 +1,5 @@
 import { Pool } from 'pg'
 
-// const URI = "http://localhost:5050/"
 
 export const pool = new Pool({
     connectionString: process.env.d9cgcpfsnv6gql,
@@ -14,9 +13,3 @@ export const pool = new Pool({
     port: 5432,
     
 });
-// pool.connect(URI)
-//     .then(db=>{
-//         console.log("CONECTADO !");
-//     }).catch(error=>{
-//         console.log(error);
-//     })

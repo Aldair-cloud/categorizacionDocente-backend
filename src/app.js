@@ -5,6 +5,8 @@ import allRoutes from "./routes/allroutes";
 const app = express();
 var cors = require("cors");
 
+const app = express();
+var cors = require("cors");
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
@@ -43,9 +45,12 @@ app.get("/pagos", (req, res) => {
       console.log(error);
     });
 });
+const allrutas = require("./allRutas");
+app.use(allrutas);
+
+const { pg } = require("./database");
 
 //DATABASE
-
 const { pg } = require("./database");
 
 export default app;

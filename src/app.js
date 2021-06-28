@@ -1,9 +1,7 @@
 import express from "express";
 import morgan from "morgan";
-import allRoutes from "./routes/allroutes";
+import allRoutes from "./allRutas";
 
-const app = express();
-var cors = require("cors");
 
 const app = express();
 var cors = require("cors");
@@ -51,6 +49,5 @@ app.use(allrutas);
 const { pg } = require("./database");
 
 //DATABASE
-const { pg } = require("./database");
 
 export default app;

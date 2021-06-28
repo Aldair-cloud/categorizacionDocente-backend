@@ -10,5 +10,8 @@ const item = require('./routes/items');
 appe.use('/item',item);
 
 
+const persona = require('./routes/persona')
+appe.use('/persona',persona)
+
 module.exports = appe;
 

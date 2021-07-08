@@ -2,21 +2,26 @@
 import express, { Router } from "express";
 const appe = express();
 
-// const factor = require('./routes/factor');
-// appe.use('/crud', factor);
+const factor = require('./routes/factor.routes')
+appe.use('/factor',factor)
 
-const item = require('./routes/items');
+const grado = require('./routes/grado.routes')
+appe.use('/grado', grado)
+
+const item = require('./routes/items.routes');
 appe.use('/item',item);
 
-
-const persona = require('./routes/persona')
+const persona = require('./routes/persona.routes')
 appe.use('/persona',persona)
 
-const usuario = require('./routes/usuario')
-appe.use('/usuario',usuario)
+const subfactor = require('./routes/subfactor.routes')
+appe.use('/subfactor',subfactor)
 
-const factor = require('./routes/factor')
-appe.use('/factor',factor)
+const uni_pais = require('./routes/uni_pais.routes')
+appe.use('/uni_pais',uni_pais)
+
+const usuario = require('./routes/usuario.routes')
+appe.use('/usuario',usuario)
 
 module.exports = appe;
 

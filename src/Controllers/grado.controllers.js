@@ -13,7 +13,7 @@ export const readAllGrados = async(req, res) => {
 export const readGrado = async(req, res) => {
     try {
         const id = parseInt(req.params.id);
-        const response = await pool.query('select * from grado where iddocente=$1', [id]);
+        const response = await pool.query('SELECT * FROM GRADO WHERE idusuario= $1', [id]);
         return res.status(200).json(response.rows);
     } catch (e) {
         console.log(e);

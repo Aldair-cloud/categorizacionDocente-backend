@@ -10,8 +10,11 @@ router.post('/postuser',persona.crearuser);
 router.get('/allpersona/:estado',persona.obtenerpersonas);
 router.get('/enviarcorreo',persona.enviarcorreo);
 router.get('/getusers',persona.obtenerusers);
-router.get('/getcat',persona.obtenercat)
+router.get('/getcat',persona.obtenercat);
+router.get('/getsub/:id',persona.getsubfactores);
+router.get('/getfactor/:id',persona.getfactor)
+router.get('/getitem',persona.getitems);
+router.get('/getdocente',persona.listardocentes);
 
-
-
+router.get('/getdocente/:id',persona.listardocente);
 module.exports = router;

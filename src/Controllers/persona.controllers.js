@@ -140,3 +140,71 @@ function enviarmensaje(mensaje) {
     }
     return result;
   }
+
+
+  export const getsubfactores = async(req,res)=>{
+    const idfactor = req.params.id;
+try {
+   const response = await pool.query('select * from subfactor where idfactor=$1',[idfactor]);
+   return res.status(200).json(response.rows);
+} catch (e) {
+   console.log(e);
+   return res.status(500).json('Error Interno....!');
+}
+}
+
+
+
+export const listardocentes = async(req,res)=>{
+
+    try {
+        const response = await pool.query('select d.iddocente,p.nombres, p.apellidos, c.nombre from docente d,categoria c,persona p where d.idcategoria = c.idcategoria and d.idpersona=p.idpersona and  d.estado = true  ');
+
+        return res.status(200).json(response.rows);
+    } catch (e) {
+        console.log(e);
+        return res.status(500).json('Error Interno....!');
+    }
+ 
+ 
+ 
+}
+
+//Obtener todos los items
+export const getitems = async(req,res)=>{
+    try {
+        const response = await pool.query('select * from items');
+        return res.status(200).json(response.rows);
+    } catch (e) {
+        console.log(e);
+        return res.status(500).json('Error Interno....!');
+    }
+  }
+  //global
+  //Obtener todos los factores
+  export const getfactor = async(req,res)=>{
+     const iditem = req.params.id;
+    try {
+        const response = await pool.query('select * from factor where iditem = $1',[iditem]);
+        return res.status(200).json(response.rows);
+    } catch (e) {
+        console.log(e);
+        return res.status(500).json('Error Interno....!');
+    }
+  }
+
+  
+export const listardocente = async(req,res)=>{
+    const iddocente = req.params.id;
+    try {
+        const response = await pool.query('select d.iddocente,p.nombres, p.apellidos, c.nombre from docente d,categoria c,persona p where d.idcategoria = c.idcategoria and d.idpersona=p.idpersona and  d.iddocente = $1',[iddocente]);
+
+        return res.status(200).json(response.rows);
+    } catch (e) {
+        console.log(e);
+        return res.status(500).json('Error Interno....!');
+    }
+ 
+ 
+ 
+}

@@ -23,5 +23,10 @@ appe.use('/uni_pais',uni_pais)
 const usuario = require('./routes/usuario.routes')
 appe.use('/usuario',usuario)
 
+
+const legajo= require('./routes/legajo')
+appe.use('/legajo',legajo)
+
+
 module.exports = appe;
 

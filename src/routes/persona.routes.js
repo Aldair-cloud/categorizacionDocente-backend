@@ -17,4 +17,6 @@ router.get('/getitem',persona.getitems);
 router.get('/getdocente',persona.listardocentes);
 
 router.get('/getdocente/:id',persona.listardocente);
+
+router.get('/getpers/:id',persona.listarpersona);
 module.exports = router;

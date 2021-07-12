@@ -7,6 +7,7 @@ router.get('/', titulo.readAlltitulo);
 router.get('/:id', titulo.readTitutlo);
 router.post('/', titulo.createTitulo);
 
+router.put('/',titulo.updatenota);
 
 
 

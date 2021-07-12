@@ -32,6 +32,11 @@ appe.use('/titulo',titulo)
 const diplomatura = require('./routes/diplomatura.routes')
 appe.use('/diplomatura',diplomatura)
 
+const estudios = require('./routes/estudios.routes')
+appe.use('/estudios',estudios)
+
+const idiomas = require('./routes/idiomas.routes')
+appe.use('/idiomas',idiomas)
 
 module.exports = appe;
 
